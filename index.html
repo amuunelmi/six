@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Example</title>
+</head>
+<body>
+    <h1>Ku Kaydi Magacaaga</h1>
+    <input type="text" id="name" placeholder="Gali magac">
+    <button onclick="saveName()">Kaydi</button>
+    <button onclick="showName()">Akhri</button>
+    <p id="output"></p>
+</body>
+<script>
+ 
+    function saveName() {
+        const name = document.getElementById('name').value; 
+        localStorage.setItem('username', name); 
+        alert('Magaca waa la keydiyay!');
+    }
+
+
+   function showName() {
+        const name = localStorage.getItem('username');
+        document.getElementById('output').innerText = name 
+            ? `Magaca keydsan waa: ${name}` 
+            : 'Magac lama helin.';       
+    }
+</script>
+</html>
